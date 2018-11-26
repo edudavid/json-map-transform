@@ -1,0 +1,22 @@
+{
+  "name": "json-map-transform",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edudavid/json-data-transformer.git"
+  },
+  "description": "Transforms json object or array of json objects based on tranformation template",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Eduardo A. David",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
