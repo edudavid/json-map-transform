@@ -1,3 +1,5 @@
-const transform = require('./lib');
+const transform = require('./lib/index');
 
-module.exports = transform;
+module.exports = {
+	transform
+};

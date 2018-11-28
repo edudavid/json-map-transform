@@ -1,4 +1,4 @@
-const transform = require('./jsonMapTransform');
+const transform = require('../index').transform;
 
 const afterTransform = (element) => Object.assign({}, element, {
 	categoryCode: element.label == 'books' ? 101 : 102
