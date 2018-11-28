@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/edudavid/json-data-transformer.git"
+    "url": "https://github.com/edudavid/json-transform.git"
   },
   "description": "Transforms json object or array of json objects based on tranformation template",
   "main": "index.js",
