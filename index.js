@@ -1,3 +1,3 @@
-const reduceJson = require('./lib');
+const transform = require('./lib');
 
-module.exports = reduceJson;
+module.exports = transform;
