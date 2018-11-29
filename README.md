@@ -6,7 +6,7 @@ A Node library that transforms a json object or an array of json objects based o
 ## Usage
 
 ```javascript
-const transform = require('json-map-transform').transform;
+const transform = require('json-map-transform');
 
 //The json objects to be transformed
 const product1 = {

@@ -1,5 +1,3 @@
-const transform = require('./lib/index');
+const transform = require('./lib/jsonMapTransform');
 
-module.exports = {
-	transform
-};
+module.exports = transform;
