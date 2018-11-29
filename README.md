@@ -1,7 +1,7 @@
 # json-map-transform
 A Node library that transforms a json object or an array of json objects based on tranformation template.
 
-[![Build Status](https://travis-ci.org/edudavid/json-transform.svg?branch=master)](https://travis-ci.org/edudavid/json-transform)
+[![Build Status](https://travis-ci.org/edudavid/json-map-transform.svg?branch=master)](https://travis-ci.org/edudavid/json-map-transform)
 
 ## Usage
 
