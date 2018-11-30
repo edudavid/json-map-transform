@@ -11,6 +11,8 @@ A Node library that transforms a json object or an array of json objects based o
 
 [Array transformation](#array-transformation)
 
+---
+
 ### Template
 
 **Key:** Each key in the template object describes the path the property in the output object where the property described in path path will be mapped.
