@@ -19,7 +19,7 @@ A Node library that transforms a json object or an array of json objects based o
 
 **Transform:** as a callback that can be used to transform the current property. It receives two parameters: (property, originalObject)
 
-Example:
+Template example:
 
 ```javascript
 const template = {
@@ -134,6 +134,7 @@ transform(product1, template, afterTransform);
 
 ### Array transformation
 ```javascript
+// The afterTransform callback is also optional
 transform([product1, product2], template, afterTransform);
 
 
