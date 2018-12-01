@@ -3,6 +3,13 @@ A Node library that transforms a json object or an array of json objects based o
 
 [![Build Status](https://travis-ci.org/edudavid/json-map-transform.svg?branch=master)](https://travis-ci.org/edudavid/json-map-transform) [![Coverage Status](https://coveralls.io/repos/github/edudavid/json-map-transform/badge.svg?branch=master)](https://coveralls.io/github/edudavid/json-map-transform?branch=master)
 
+## Instalation
+
+Using npm:
+```
+npm i --save json-map-transform
+```
+
 ## Usage
 
 [Template](#template)
@@ -15,11 +22,11 @@ A Node library that transforms a json object or an array of json objects based o
 
 ### Template
 
-**Key:** Each key in the template object describes the path the property in the output object where the property described in path path will be mapped.
+**Key:** Each key property in the template object describes the path the property in the output object to where the property described in **path** will be mapped.
 
-**Path:** Is the path to the property in the original object that will be mapped to the key. It can also be an array of possible paths in case the objects that are being converted are not standarized
+**Path:** Is the path to the property in the original object that will be mapped to the template key. It can also be an array of possible paths in case the objects doesn't follow an exact pattern.
 
-**Transform:** as a callback that can be used to transform the current property. It receives two parameters: (property, originalObject)
+**Transform:** as a callback that can be used to transform the current property. It receives two parameters: (property, originalObject).
 
 Template example:
 
@@ -50,7 +57,7 @@ This template will work like this:
 | from                   | to            | transform      |
 | :--------------------- |:-------------| :--------------|
 | name                   | title         | toUpperCase()  |
-| category or categories | label         |                |
+| [category, categories] | label         |                |
 | meta.vendor            | vendor        |                |
 | photos                 | meta.photos   | photo.photoUrl |
 | code                   | meta.code     |                |
