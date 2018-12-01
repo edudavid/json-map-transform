@@ -16,15 +16,12 @@
   "author": "Eduardo A. David",
   "homepage": "https://github.com/edudavid/json-map-transform#readme",
   "main": "index.js",
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
-  },
   "scripts": {
-    "test": "jest "
+    "test": "jest",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "jest": "^23.6.0"
   },
