@@ -54,15 +54,13 @@ const template = {
 
 This template will work like this:
 
-| from                   | to            | transform      |
-| :--------------------- |:-------------| :--------------|
-| name                   | title         | toUpperCase()  |
-| [category, categories] | label         |                |
-| meta.vendor            | vendor        |                |
-| photos                 | meta.photos   | photo.photoUrl |
-| code                   | meta.code     |                |
-
-
+| from                   | to             | transform       |
+| :--------------------- |:-------------- | :-------------- |
+| name                   | title          | toUpperCase()   |
+| [category, categories] | label          |                 |
+| meta.vendor            | vendor         |                 |
+| photos                 | meta.photos    | photo.photoUrl  |
+| code                   | meta.code      |                 |
 
 
 ### Single object transformation
