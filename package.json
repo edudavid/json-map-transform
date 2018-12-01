@@ -16,8 +16,13 @@
   "author": "Eduardo A. David",
   "homepage": "https://github.com/edudavid/json-map-transform#readme",
   "main": "index.js",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest "
   },
   "devDependencies": {
     "eslint": "^5.9.0",
