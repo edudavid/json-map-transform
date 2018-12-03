@@ -23,11 +23,11 @@ npm i --save json-map-transform
 
 ### Template
 
-**Key:** Each key property in the template object describes the path the property in the output object to where the property described in **path** will be mapped.
+**Key:** Each key property in the template object describes the path to the property in the output object. This is where the value in **path** of the input object will be mapped to.
 
-**Path:** Is the path to the property in the original object that will be mapped to the template key. It can also be an array of possible paths in case the objects doesn't follow an exact pattern.
+**Path:** Is the path to the property in the input object that will be mapped to the template key. It can also be an array of possible paths in case the objects doesn't follow an exact pattern.
 
-**Transform:** as a callback that can be used to transform the current property. It receives two parameters: (property, originalObject).
+**Transform:** Is a callback that can be used to transform the current property. It receives two parameters: (property, originalObject).
 
 Template example:
 
@@ -100,7 +100,7 @@ const product2 = {
 
 convertedJson = transform(product1, template);
 
-//Outut object
+//Output object
 {
     "title": "HELLO WORLD",
     "label": "books",
@@ -115,7 +115,7 @@ convertedJson = transform(product1, template);
 }
 ```
 
-You ca also use an optional callback executed after transformation
+You ca also use an optional callback to be executed after the transformation
 
 ```javascript
 const afterTransform = (element) => Object.assign({}, element, {
