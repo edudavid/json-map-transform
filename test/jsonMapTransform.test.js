@@ -60,6 +60,19 @@ test('converts json object based on template', () => {
 	expect(convertedJson.vendor).toBe('Author name');
 });
 
+test('ignores invalid path', () => {
+	const convertedJson = transform(product1, Object.assign({}, template, {
+		wrongProperty: {
+			path: 'unexistingPath'
+		}
+	}));
+
+	expect(convertedJson.wrongProperty).toBe(undefined);
+	expect(convertedJson.title).toBe('HELLO WORLD');
+	expect(convertedJson.label).toBe('books');
+	expect(convertedJson.vendor).toBe('Author name');
+});
+
 test('executes transformation callback for a single object', () => {
 	const convertedJson = transform(product1, template, afterTransform);
 
