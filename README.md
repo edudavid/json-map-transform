@@ -176,4 +176,4 @@ transform([product1, product2], template, afterTransform);
 ]
 ```
 
-The afterTransform callback called after each element tranformation.
+The afterTransform callback is called after each element tranformation.
