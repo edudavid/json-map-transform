@@ -17,12 +17,13 @@
   "homepage": "https://github.com/edudavid/json-map-transform#readme",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "jest": "^23.6.0"
   }
+  
 }
