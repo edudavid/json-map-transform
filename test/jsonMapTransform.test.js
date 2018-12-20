@@ -79,23 +79,23 @@ test('executes transformation callback for a single object', () => {
 	expect(convertedJson.categoryCode).toBe(101);
 });
 
-test('sets default value at object attrubute on unexisting path', () => {
+test('sets default value at object attribute on unexisting path', () => {
 	const templateWithDefaultValue = Object.assign({}, template, {
 		title: {
 			path: 'unexisting.path',
-			default: 'This is a default path'
+			default: 'This is a default title'
 		}
 	});
 
 	const convertedJson = transform(product1, templateWithDefaultValue);
-	expect(convertedJson.title).toBe('This is a default path');
+	expect(convertedJson.title).toBe('This is a default title');
 });
 
-test('sets default value at object attrubute with undefined value', () => {
+test('sets default value at object attribute with undefined value', () => {
 	const templateWithDefaultValue = Object.assign({}, template, {
 		title: {
 			path: 'name',
-			default: 'This is a default path'
+			default: 'This is a default title'
 		}
 	});
 
@@ -104,7 +104,37 @@ test('sets default value at object attrubute with undefined value', () => {
 	});
 
 	const convertedJson = transform(productWIthUndefinedName, templateWithDefaultValue);
-	expect(convertedJson.title).toBe('This is a default path');
+	expect(convertedJson.title).toBe('This is a default title');
+});
+
+test('sets default value at object attribute with undefined value returned from transform', () => {
+	const templateWithDefaultValue = Object.assign({}, template, {
+		title: {
+			path: 'name',
+			default: 'This is a default title',
+			transform: (val) => val
+		}
+	});
+
+	const productWIthUndefinedName = Object.assign({}, product1, {
+		name: undefined
+	});
+
+	const convertedJson = transform(productWIthUndefinedName, templateWithDefaultValue);
+	expect(convertedJson.title).toBe('This is a default title');
+});
+
+test('Accepts empty string for tranform value', () => {
+	const templateWithDefaultValue = Object.assign({}, template, {
+		title: {
+			path: 'name',
+			default: '',
+			transform: () => undefined
+		}
+	});
+
+	const convertedJson = transform(product1, templateWithDefaultValue);
+	expect(convertedJson.title).toBe('');
 });
 
 test('converts json object based on template with nested path', () => {
