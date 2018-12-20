@@ -29,6 +29,8 @@ npm i --save json-map-transform
 
 **Transform:** Is a callback that can be used to transform the current property. It receives two parameters: (property, originalObject).
 
+**Default:** In case a path does not exists in the input object, the default value will be uses.
+
 Template example:
 
 ```javascript
@@ -41,7 +43,8 @@ const template = {
 		path: ['category', 'categories'],
 	},
 	vendor: {
-		path: 'meta.vendor'
+        path: 'meta.vendor',
+        default: 'No vendor'
 	},
 	'meta.photos': {
 		path: 'photos',

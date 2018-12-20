@@ -79,6 +79,18 @@ test('executes transformation callback for a single object', () => {
 	expect(convertedJson.categoryCode).toBe(101);
 });
 
+test('sets default value at object attrubute', () => {
+	const templateWithDefaultValue = Object.assign({}, template, {
+		title: {
+			path: 'unexisting.path',
+			default: 'This is a default path'
+		}
+	});
+
+	const convertedJson = transform(product1, templateWithDefaultValue);
+	expect(convertedJson.title).toBe('This is a default path');
+});
+
 test('converts json object based on template with nested path', () => {
 	const convertedJson = transform(product1, template);
 
