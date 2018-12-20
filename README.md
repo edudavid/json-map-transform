@@ -43,8 +43,8 @@ const template = {
 		path: ['category', 'categories'],
 	},
 	vendor: {
-        path: 'meta.vendor',
-        default: 'No vendor'
+		path: 'meta.vendor',
+		default: 'No vendor'
 	},
 	'meta.photos': {
 		path: 'photos',
