@@ -73,6 +73,34 @@ test('ignores invalid path', () => {
 	expect(convertedJson.vendor).toBe('Author name');
 });
 
+test('Omits undefined value', () => {
+	const convertedJson = transform(product1, Object.assign({}, template, {
+		wrongProperty: {
+			path: 'unexistingPath',
+			omitValues: [undefined],
+		}
+	}));
+
+	expect(convertedJson).not.toHaveProperty('wrongProperty');
+	expect(convertedJson.title).toBe('HELLO WORLD');
+	expect(convertedJson.label).toBe('books');
+	expect(convertedJson.vendor).toBe('Author name');
+});
+
+test('Omits undefined value returned by transform', () => {
+	const convertedJson = transform(product1, Object.assign({}, template, {
+		title: {
+			path: 'name',
+			omitValues: ['ERROR', '', undefined],
+			transform: () => 'ERROR'
+		}
+	}));
+
+	expect(convertedJson).not.toHaveProperty('title');
+	expect(convertedJson.label).toBe('books');
+	expect(convertedJson.vendor).toBe('Author name');
+});
+
 test('executes transformation callback for a single object', () => {
 	const convertedJson = transform(product1, template, afterTransform);
 
