@@ -4,13 +4,15 @@ const afterTransform = (element) => Object.assign({}, element, {
 	categoryCode: element.label == 'books' ? 101 : 102
 });
 
-const buildProduct = (name, category, price, photos, vendor, code) => ({
+const buildProduct = (name, category, price, photos, vendor, code, isActive, inStock) => ({
 	name,
 	category,
 	price,
 	photos,
 	meta: { vendor },
 	code,
+	isActive,
+	inStock
 });
 
 const product1 = buildProduct('Hello world', 'books', '200',
@@ -19,7 +21,9 @@ const product1 = buildProduct('Hello world', 'books', '200',
 		{ title: 'photo2', photoUrl: 'http://photo2.jpg' }
 	],
 	'Author name',
-	'BOOK01'
+	'BOOK01',
+	false,
+	0
 );
 
 const product2 = buildProduct('My Digital Product', 'digital', '500',
@@ -28,7 +32,9 @@ const product2 = buildProduct('My Digital Product', 'digital', '500',
 		{ title: 'photo4', photoUrl: 'http://photo4.jpg' }
 	],
 	'Global Digital',
-	'DIGITAL01'
+	'DIGITAL01',
+	true,
+	10
 );
 
 const template = {
@@ -41,6 +47,12 @@ const template = {
 	},
 	vendor: {
 		path: 'meta.vendor'
+	},
+	status: {
+		path: 'isActive'
+	},
+	inStock: {
+		path: 'inStock'
 	},
 	'meta.photos': {
 		path: 'photos',
@@ -171,6 +183,8 @@ test('converts json object based on template with nested path', () => {
 	expect(convertedJson.meta.photos[0]).toBe('http://photo1.jpg');
 	expect(convertedJson.meta.photos[1]).toBe('http://photo2.jpg');
 	expect(convertedJson.meta.id).toBe('BOOK01');
+	expect(convertedJson.status).toBe(false);
+	expect(convertedJson.inStock).toBe(0);
 });
 
 test('converts array of json objects based on template', () => {

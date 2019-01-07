@@ -31,7 +31,7 @@ npm i --save json-map-transform
 
 **Default:** In case a path does not exists in the input object or the value returned by transform is undefined, the default value will be used.
 
-**OmitValues:** Sometimes it is necessary to ignore values on the transformation (ex: undefined, empty string or other values depending on a business rule). With the omitValues, it is possible to define an array of values that should be ignored on the transformation. The output object will not the associated key.
+**OmitValues:** Sometimes it is necessary to ignore values on the transformation (ex: undefined, empty string or other values depending on a business rule). With the omitValues, it is possible to define an array of values that should be ignored on the transformation. The output object will not have the associated key.
  
 
 Template example:
