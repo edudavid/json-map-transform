@@ -99,6 +99,16 @@ test('Omits undefined value', () => {
 	expect(convertedJson.vendor).toBe('Author name');
 });
 
+test('Missing path in template', () => {
+	const convertedJson = transform(product1, Object.assign({}, template, {
+		wrongProperty: {
+			omitValues: [undefined],
+		}
+	}));
+
+	expect(convertedJson).not.toHaveProperty('wrongProperty');
+});
+
 test('Omits undefined value returned by transform', () => {
 	const convertedJson = transform(product1, Object.assign({}, template, {
 		title: {
